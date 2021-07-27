@@ -1,0 +1,164 @@
+body{
+  font-family: Montserrat;
+  font-weight: 400;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+p{
+  color: #8f8f8f;
+}
+
+
+/* Containers */
+.container-fluid{
+  padding: 7% 15%;
+}
+
+/* Sections */
+.colored-section{
+  background-color: #0079C1;
+  color: #fff;
+}
+
+.white-section{
+  background-color: #fff;
+}
+
+
+/* Headings */
+.big-heading{
+  font-family: Montserrat;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.section-heading{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Navigation bar*/
+.navbar-brand{
+  font-family: Ubuntu;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.navbar{
+  padding: 0 0 4.5rem;
+}
+
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-family: Montserrat;
+  font-weight: 300;
+}
+
+.navbar-img{
+  width: 8%;
+  position: relative;
+}
+
+/*Download buttoms*/
+.download-button{
+  margin: 5% 3% 5% 0;
+}
+
+/* Title section*/
+
+#title .container-fluid{
+  padding: 3% 15% 7%;
+  text-align: left;
+}
+
+
+/*Title image*/
+.title-image{
+  width: 80%;
+  position: absolute;
+  left: 20%;
+}
+
+/*Features section*/
+#features{
+  position: relative;
+}
+
+.feature-title{
+  font-size: 1.5rem;
+}
+
+.feature-box{
+  padding: 5%;
+}
+
+.icon{
+  color: #0079C1;
+  margin-bottom: 1rem;
+}
+
+
+.icon:hover{
+  color: #39A2DB;
+}
+
+
+/*Testimonial section*/
+#testimonials{
+  background-color: #39A2DB;
+}
+
+.testimonial-text{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.testimonial-image{
+  width: 10%;
+  border-radius: 100%; /*Make the image rounded*/
+  margin: 20px;
+}
+
+/* Pricing section */
+#pricing{
+  padding: 100px;
+}
+
+.price-text{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column{
+  padding: 3% 2%;
+}
+
+/* Adjusting size for specific widths*/
+@media screen and (max-width: 1124px){
+
+  #title .container-fluid{
+    text-align: center;
+  }
+
+  .title-image{
+    position: static;
+    transform: rotate(0);
+    width: 60%
+  }
+}
+
+/* Footer */
+.social-media{
+  margin: 1rem 0.5rem;
+}
