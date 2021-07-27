@@ -10,17 +10,17 @@ Seguro.prototype.cotizarSeguro = function () {
   
 
     let cantidad;
-    const base = 300    ;
+    const base = 200    ;
 
     switch (this.marca) {
         case '1':
-            cantidad = base * 1.15;
+            cantidad = base * 1.16;
             break;
         case '2':
-            cantidad = base * 1.05;
+            cantidad = base * 1.20;
             break;
         case '3':
-            cantidad = base * 1.35;
+            cantidad = base * 1.26;
             break;
     }
 
@@ -34,11 +34,11 @@ Seguro.prototype.cotizarSeguro = function () {
         Si el seguro es Completo 50% más
     */
    if (this.tipo === 'maintenance') {
-       cantidad *= 1.15;
+       cantidad *= 1.16;
    } else if(this.tipo === 'stored'){
        cantidad *= 1.20;
    }else if(this.tipo === 'create'){
-        cantidad *= 1.30;
+        cantidad *= 1.24;
    }
 
    return cantidad;
@@ -92,7 +92,8 @@ Interfaz.prototype.mostrarResultado = function (seguro, total) {
        <p>Service: ${marca}</p>
        <p>Time: ${seguro.anio} months</p>
        <p>Extra service: ${seguro.tipo}</p>
-       <p>Total: $ ${total}</p>   
+       <p>Total: $ ${total.toFixed(2)}</p> 
+
     `;
     const spinner = document.querySelector('#cargando img');
     spinner.style.display = 'block';
