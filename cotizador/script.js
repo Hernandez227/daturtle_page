@@ -10,24 +10,24 @@ Seguro.prototype.cotizarSeguro = function () {
   
 
     let cantidad;
-    const base = 200    ;
+    const base = 300;
 
     switch (this.marca) {
         case '1':
-            cantidad = base * 1.16;
-            break;
-        case '2':
             cantidad = base * 1.20;
             break;
+        case '2':
+            cantidad = base * 1.50;
+            break;
         case '3':
-            cantidad = base * 1.26;
+            cantidad = base * 1.90;
             break;
     }
 
     //leer el año
     const diferencia = new Date().getMonth() - this.anio;
     //cada año de diferencia afeca en 3 %
-    cantidad -= ((diferencia*3) * cantidad ) / 100;
+    cantidad -= ((diferencia*6) * cantidad ) / 100;
 
     /*
         Si el seguro es Básico * 30% más
@@ -39,6 +39,8 @@ Seguro.prototype.cotizarSeguro = function () {
        cantidad *= 1.20;
    }else if(this.tipo === 'create'){
         cantidad *= 1.24;
+   }else if(this.tipo === 'none'){
+       cantidad == cantidad;
    }
 
    return cantidad;
@@ -90,7 +92,7 @@ Interfaz.prototype.mostrarResultado = function (seguro, total) {
     div.innerHTML = `
        <p class="header">Your resume:</p>
        <p>Service: ${marca}</p>
-       <p>Time: ${seguro.anio} months</p>
+       <p>Time of technical support: ${seguro.anio} months</p>
        <p>Extra service: ${seguro.tipo}</p>
        <p>Total: $ ${total.toFixed(2)}</p> 
 
@@ -149,7 +151,7 @@ formulario.addEventListener('submit', function (e) {
 
 
 const max = new Date().getMonth(),
-      min = max - 6;
+      min = max - 7;
 
 const  selectAnios = document.getElementById('anio');
 
