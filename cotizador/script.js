@@ -24,14 +24,16 @@ Seguro.prototype.cotizarSeguro = function () {
             break;
     }
 
-    //leer el año
+    //leer el mes
     const diferencia = new Date().getMonth() - this.anio;
-    //cada año de diferencia afeca en 3 %
+    //cada mes de diferencia afecta en 6 %
     cantidad -= ((diferencia*6) * cantidad ) / 100;
 
     /*
-        Si el seguro es Básico * 30% más
-        Si el seguro es Completo 50% más
+        Si el servicio es maintenance * 16% más
+        Si el servicio es stored 20% más
+        Si el servicio es create 24% más
+        Si es ninguno, no se suma ningun porcentaje
     */
    if (this.tipo === 'maintenance') {
        cantidad *= 1.16;
@@ -107,7 +109,7 @@ Interfaz.prototype.mostrarResultado = function (seguro, total) {
     
 }
 
-//capturar datops del formulario
+//capturar datos del formulario
 const formulario = document.getElementById('cotizar-seguro');
 
 formulario.addEventListener('submit', function (e) {
